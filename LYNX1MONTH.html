@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rogistration</title>
+    <link rel="stylesheet" href=" btstyle.css">
+</head>
+<body>
+    <script>
+        function sendwhatsapp(){
+         var phonenumber = "+213557096469";
+  
+         var name = document.querySelector(".name").value;
+         var surname = document.querySelector(".surname").value;
+         var city = document.querySelector(".city").value;
+         var number = document.querySelector(".number").value;
+  
+         var url = "https://wa.me/" + phonenumber + "?text="
+         +"*الإسم :* "+name+"%0a"
+         +"*اللقب:* "+surname+"%0a"
+         +"*المدينة:* "+city+"%0a"
+         +"*الهاتف :* "+number
+         +"%0a%0a"
+         +"LYNX 1MONTH = 500.00 DA";
+  
+         window.open(url, '_blank').focus();
+       }
+    </script>
+    
+    <div class="container">
+        <div class="text">500.00DA <br> LYNX</div> <br>
+        <form class="hhh"  action="connect.php" method="post">
+            <div class="form-row">
+                <div class="input1">
+                    <input type="text" class="name" required>
+                    <label for=""> الإسم↑ </label>
+                </div>
+                <div class="input2"> <br>
+                    <input type="text" class="surname" required>
+                    <label for=""> اللقب ↑</label>
+                </div>
+
+
+                <div class="input3"> <br>
+                    <input type="text" class="number" required>
+                    <label for="">الهاتف ↑</label>
+                </div>
+                <div class="input4"> <br>
+                    <input type="text" class="city" required>
+                    <label for="">المدينة ↑</label>
+                </div><br><br><br>
+
+
+                 
+                
+                <div class="form-row submit-btn">
+                    <div class="input6">
+                        <div class="inner"></div>
+                        <input type="submit"  onclick="sendwhatsapp();" value="Confirm">
+                        
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

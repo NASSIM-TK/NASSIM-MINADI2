@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYHD</title>
+    <!-- important assets
+    linear-gradient(#141e30, #2a6c56)
+     box-shadow: 0 0 5px #03f484, 0 0 25px #03f484, 0 0 50px #03f484, 0 0 100px #03f484;
+    
+    -->
+     <link rel="stylesheet" href="image">
+
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(#141e30, #2a6c56);
+        }
+        
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .login-box h2 {
+            margin: 30px 0 30px;
+            padding: 0;
+            color: #03f484;
+            text-align: center;
+        }
+        
+        .login-box .user-box {
+            position: relative;
+        }
+        
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #e4d020;
+            margin-bottom: 30px;
+            outline: none;
+            background: transparent;
+            border-bottom: 2px solid #03f484;
+        }
+        
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+        
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #03f484;
+            font-size: 12px;
+        }
+        
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03f484;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: 0.5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+        }
+        
+        .login-box a:hover {
+            background: #03f484;
+            color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03f484, 0 0 25px #03f484, 0 0 50px #03f484, 0 0 100px #03f484;
+        }
+        
+        .login-box a span {
+            position: absolute;
+            display: block;
+        }
+        
+        .login-box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03f484);
+            animation: btn-anim1 1s linear infinite;
+        }
+        
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+        
+        .login-box a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03f484);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+        
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+        
+        .login-box a span:nth-child(3) {
+            bottom: 0;
+            right: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #03f484);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+        
+        .login-box a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03f484);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+        
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+
+.btnpush {
+    padding: 8px 20px;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 15px;
+    text-transform: uppercase;
+    margin: 15px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    border:  1px solid #00fffc;
+}
+
+.btnpush::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent,
+    #00fffc, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+    position: absolute; 
+
+}
+
+.btnpush:hover {
+    background: transparent;
+    box-shadow:  0 0 20px 5px #00fffc;
+}
+
+.btnpush:hover::before {
+    transform: translateX(100%);
+}
+
+
+
+/*3*/
+.btnpush:nth-child(3) {
+    border:  1px solid #09f815;
+}
+
+.btnpush:nth-child(3)::before {
+    background: linear-gradient(120deg, transparent, #09f815, transparent);
+}
+
+.btnpush:nth-child(3):hover {
+    box-shadow: 0 0 20px 5px #09f815;
+}
+
+/*4*/
+.btnpush:nth-child(4) {
+    border:  1px solid #f82121;
+}
+
+.btnpush:nth-child(4)::before {
+    background: linear-gradient(120deg, transparent, #f82121, transparent);
+}
+
+.btnpush:nth-child(4):hover {
+    box-shadow: 0 0 20px 5px #f82121;
+}
+
+/*5*/
+.btnpush:nth-child(5) {
+    border:  1px solid #f8e321;
+}
+
+.btnpush:nth-child(5)::before {
+    background: linear-gradient(120deg, transparent, #f8e321, transparent);
+}
+
+.btnpush:nth-child(5):hover {
+    box-shadow: 0 0 20px 5px #f8e321;
+}
+
+.login-box img {
+    width: 100px;
+    margin-top: -100px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 327px){
+
+    h2 {
+        font-size: 20px;
+    }
+    .login-box {
+        width: 280px;
+        height: 440px;
+    }
+
+}
+@media (max-width: 344px){
+
+h2 {
+    font-size: 20px;
+}
+.login-box {
+    width: 80%;
+
+}
+}
+@media (max-width: 430px){
+
+h2 {
+    font-size: 25px;
+}
+.login-box {
+    width: 85%;
+
+}
+
+}
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <img src="/images/404-tick.png">
+        <h2>Card Shopping !</h2>
+
+
+            <button  onclick=""  type="submit" class="btnpush btn-primary btn-ghost">
+                PayPal  قريبا 
+            </button>
+    
+            <button  onclick="href1()"  type="submit" class="btnpush btn-primary btn-ghost">
+                Wise قريبا
+            </button>
+
+            <button  onclick=" href() "  type="submit" class="btnpush btn-primary btn-ghost">
+                CCP
+             </button>
+
+             <button  onclick="box()"  type="submit" class="btnpush btn-primary btn-ghost">
+                flixe  
+            </button> 
+
+                
+                 
+                
+
+            <script>
+                function box() {
+                    var userval = confirm("تنبيه: في الفليكسي سيرتفع سعر الاشتراك ب  100 دينار  اذا كنت تريد شراء بالسعر الاصلي اضغط الغاء و قم باختيار ccp ")
+                    if(userval==true)
+                {
+                    window.location.href='MYHD1MFLIXE.html';
+                }
+                else {
+                
+                    window.location.href='CARDMYHD1M.html';
+                
+                }
+                }
+                function href(){
+                    window.location.href='Flixe.html';
+                };
+
+                function hreff(){
+                    window.location.href='wise.html'
+                };
+            </script>
+
+        
+    </div>
+
+</body>
